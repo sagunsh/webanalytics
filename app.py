@@ -57,7 +57,11 @@ async def index(request: Request):
     for row in cursor.fetchall():
         row['url'] = urljoin(str(request.base_url), f'/client/{row["client_id"]}')
         records.append(row)
-    return records
+
+    if len(records) == 0:
+        return {'hello': 'world'}
+    else:
+        return records
 
 
 @app.get('/client/{client_id}')

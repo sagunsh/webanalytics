@@ -33,7 +33,7 @@ Start the analytics server
 
     (venv) $ fastapi dev app.py --port=5000
 
-Register your client
+In another terminal window, register your client
 
     (venv) $ curl --header "Content-Type: application/json" -X POST -d '{"client_id": "AA100", "domain": "127.0.0.1:3000"}' http://127.0.0.1:5000/add
 
