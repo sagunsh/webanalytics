@@ -8,25 +8,34 @@ A minimal web analytics project written using Python and FastAPI.
 
 Make necessary changes to .env file
 
+### Virtual Environment [Option but recommended]
+
+    $ sudo pip3 install virtualenv
+    $ virtualenv venv
+    $ source venv/bin/activate
+    (venv) $
+
+`(venv)` verifies that virtual environment has been activated
+
 ### Install Requirements
 
-    $ pip install -r requirements
+    (venv) $ pip install -r requirements.txt
 
 ### Create Database
 
 **Note: Running this will remove existing sqlite file along with all data and create new file**
 
-    $ python init_db.py
+    (venv) $ python db_init.py
 
 ### Run locally
 
 Start the analytics server
 
-    $ fastapi dev app.py --port=5000
+    (venv) $ fastapi dev app.py --port=5000
 
 Register your client
 
-    $ curl --header "Content-Type: application/json" -X POST -d '{"client_id": "AA100", "domain": "127.0.0.1:3000"}' http://127.0.0.1:5000/add
+    (venv) $ curl --header "Content-Type: application/json" -X POST -d '{"client_id": "AA100", "domain": "127.0.0.1:3000"}' http://127.0.0.1:5000/add
 
 You will see a output like this:
 
@@ -34,8 +43,8 @@ You will see a output like this:
 
 Start the test server
 
-    $ cd test
-    $ python server.py
+    (venv) $ cd test
+    (venv) $ python server.py
 
 Then, visit http://127.0.0.1:3000/ to send events to analytics server
 
