@@ -35,7 +35,8 @@ try:
             user_agent VARCHAR(500),
             browser VARCHAR(255),
             os VARCHAR(255),
-            device VARCHAR(255)
+            device VARCHAR(255),
+            event_timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )''')
     conn.commit()
     print(f'database {filename} created successfully')

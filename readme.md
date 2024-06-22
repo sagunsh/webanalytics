@@ -6,9 +6,9 @@ A minimal web analytics project written using Python and FastAPI.
 
     $ cp .env.example .env
 
-Make necessary changes to .env.example
+Make necessary changes to .env file
 
-### Requirements
+### Install Requirements
 
     $ pip install -r requirements
 
