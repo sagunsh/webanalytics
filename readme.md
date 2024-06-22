@@ -49,3 +49,17 @@ Start the test server
 Then, visit http://127.0.0.1:3000/ to send events to analytics server
 
 Now, goto http://127.0.0.1:5000/client/AA100 to see results.
+
+### Deployment
+
+For deployment, follow this
+document https://docs.vultr.com/how-to-deploy-fastapi-applications-with-gunicorn-and-nginx-on-ubuntu-20-04
+
+### Add Tracking Script
+
+Once deployed, you can add the following snippet in the head section of all the pages in that domain name you wish to
+track.
+
+    <script defer src="https://<analytics.test>/static/script.js" data-code="<code>"></script>
+
+Replace `<analytics.test>` with your domain name where you hosted this analytics app and `<code>` with the respective code for the domain where this script tag is being added.
