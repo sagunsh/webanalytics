@@ -59,6 +59,8 @@ Now, goto http://127.0.0.1:5000/client/AA100 to see results.
 For deployment, follow this
 document https://docs.vultr.com/how-to-deploy-fastapi-applications-with-gunicorn-and-nginx-on-ubuntu-20-04
 
+Also, change the `base_url` in `script_local.js` to your domain.
+
 ### Add Tracking Script
 
 Once deployed, you can add the following snippet in the head section of all the pages in that domain name you wish to

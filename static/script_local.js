@@ -1,7 +1,3 @@
-function ignore(t, e) {
-    t && console.warn("Ignoring Event: " + t), e && e.callback && e.callback()
-}
-
 function detect_automation() {
     if (window._phantom || window.__nightmare || window.navigator.webdriver || window.Cypress) return true;
 
@@ -14,10 +10,12 @@ function detect_automation() {
 }
 
 function track_event() {
-    // if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-    //     console.log('Ignoring localhost');
-    //     return;
-    // }
+    if (!base_url.includes('127.0.0.1') && !base_url.includes('localhost')) {
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            console.log('Ignoring localhost');
+            return;
+        }
+    }
 
     if (location.protocol !== 'https:' && location.protocol !== 'http:') {
         console.log('Ignoring not http');
@@ -47,7 +45,7 @@ function track_event() {
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            console.log('Request was successful:', xhr.responseText);
+            console.log('Response from server:', xhr.responseText);
         }
     };
 }
