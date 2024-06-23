@@ -55,7 +55,7 @@ async def index(request: Request):
     cursor.execute('SELECT * FROM clients')
     records = []
     for row in cursor.fetchall():
-        row['url'] = urljoin(str(request.base_url), f'/client/{row["client_id"]}')
+        row['url'] = urljoin(os.getenv('BASE_URL', 'http://127.0.0.1:5000/'), f'/client/{row["client_id"]}')
         records.append(row)
 
     if len(records) == 0:
