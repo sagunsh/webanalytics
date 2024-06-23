@@ -12,7 +12,7 @@ A minimal web analytics app.
 
 Make necessary changes to .env file
 
-### Virtual Environment [Option but recommended]
+### Virtual Environment [Optional but recommended]
 
     $ sudo pip3 install virtualenv
     $ virtualenv venv
