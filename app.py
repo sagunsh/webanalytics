@@ -69,7 +69,7 @@ async def client(client_id: str):
     conn = create_connection_and_tables(db_file)
     conn.row_factory = dict_factory
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM pageview WHERE client_id=?', (client_id,))
+    cursor.execute('SELECT * FROM pageview WHERE client_id=? ORDER BY event_timestamp DESC LIMIT 50', (client_id,))
     records = cursor.fetchall()
     return records
 
