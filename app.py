@@ -70,7 +70,11 @@ async def client(client_id: str):
     conn.row_factory = dict_factory
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM pageview WHERE client_id=? ORDER BY event_timestamp DESC LIMIT 50', (client_id,))
-    records = cursor.fetchall()
+    records = []
+    for row in cursor.fetchall():
+        row.pop('id')
+        row.pop('ip_addr')
+        records.append(row)
     return records
 
 
