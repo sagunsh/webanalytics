@@ -128,7 +128,16 @@ async def track(page_view: Pageview, request: Request):
             'msg': 'client do not match with domain name'
         }
 
-    ip_addr = request.client.host
+    print(request.headers)
+    try:
+        ip_addr = request.headers.get('X-Forwarded-For').split(',')[0].strip()
+    except:
+        try:
+            ip_addr = request.client.host
+        except:
+            ip_addr = None
+
+    print(ip_addr)
     source = get_source(page_view.referrer)
     country, region, city = get_geo_location(ip_addr)
     browser = get_browser(page_view.user_agent)
