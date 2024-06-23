@@ -1,6 +1,10 @@
 ## Web Analytics
 
-A minimal web analytics project written using Python and FastAPI.
+A minimal web analytics app.
+
+* Python 3.8
+* Fast API
+* Sqlite
 
 ### .env setup
 
@@ -60,6 +64,5 @@ document https://docs.vultr.com/how-to-deploy-fastapi-applications-with-gunicorn
 Once deployed, you can add the following snippet in the head section of all the pages in that domain name you wish to
 track.
 
-    <script defer src="https://<analytics.test>/static/script.js" data-code="<code>"></script>
+    <script defer src="http://127.0.0.1:5000/static/script.js" data-code="AA100"></script>
 
-Replace `<analytics.test>` with your domain name where you hosted this analytics app and `<code>` with the respective code for the domain where this script tag is being added.

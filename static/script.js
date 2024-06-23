@@ -48,5 +48,5 @@ function track_event() {
     };
 }
 
-const base_url = 'https://analytics.sagunshrestha.com';
+const base_url = 'http://127.0.0.1:5000/';
 track_event();
