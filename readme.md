@@ -66,5 +66,5 @@ Also, change the `base_url` in `script_local.js` to your domain.
 Once deployed, you can add the following snippet in the head section of all the pages in that domain name you wish to
 track.
 
-    <script defer src="http://127.0.0.1:5000/static/script.js" data-code="AA100"></script>
+    <script defer src="http://127.0.0.1:5000/static/script_local.js" data-code="AA100"></script>
 
